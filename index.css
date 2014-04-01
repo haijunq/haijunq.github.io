@@ -1,0 +1,32 @@
+body {
+	font: sans-serif;
+	text-align: center;
+} 
+
+span {
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+}
+
+iframe {
+	border:	1px solid #000000;
+}
+
+li {
+	font-size: 20px;
+}
+
+#main {
+	clear: both;
+	display: block;
+}
+
+#canvas {
+	border:	1px solid #000000;
+}
+
+#rules {
+	float: left;
+	text-align: left;
+}
