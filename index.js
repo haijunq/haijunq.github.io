@@ -1,4 +1,4 @@
-
+/*
 var c = undefined; 
 var ctx = undefined;
 
@@ -8,11 +8,6 @@ $(document).ready(function() {
 	drawTriangle(50,400,1100,400,600,50);
 });
 
-
-/*
- * Draw a triangle. 
- * By Haijun
- */
 function drawTriangle(x0, y0, x1, y1, x2, y2) {
 	var stage = new createjs.Stage("canvas");
 	var triangle = new createjs.Shape();
@@ -23,3 +18,4 @@ function drawTriangle(x0, y0, x1, y1, x2, y2) {
 	stage.update();
 }
 
+*/
