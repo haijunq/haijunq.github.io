@@ -1,0 +1,3 @@
+var rcode = "function drawTriangle(x0, y0, x1, y1, x2, y2) {\r\n\tvar stage = new createjs.Stage(\"canvas\");\r\n\tvar triangle = new createjs.Shape();\r\n\ttriangle.graphics.beginStroke(\"black\");\r\n\ttriangle.graphics.moveTo(x0,y0).lineTo(x1,y1).lineTo(x2,y2).lineTo(x0,y0);\r\n\ttriangle.graphics.endStroke(\"black\");\r\n\tstage.addChild(triangle);\r\n\tstage.update();\r\n};\r\n=====\r\n$(document).ready(function() {\r\n\tc = document.getElementById(\"canvas\");\r\n\tctx = c.getContext(\"2d\");\r\n\tdrawTriangle(50,400,1100,400,600,50);\r\n});";
+
+var rcodearray = rcode.split("=====\r\n");

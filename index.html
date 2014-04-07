@@ -5,6 +5,7 @@
 		<script src="lib/createjs-2013.12.12.min.js" type="text/javascript"></script>
 		<script src="lib/jquery-1.11.0.min.js" type="text/javascript"></script>
 		<script src="index.js" type="text/javascript"></script>
+		<script src="initiator.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<h1>Code Relay Game as Web Applications</h1>
@@ -22,8 +23,8 @@
 				</div>
 
 				<div id="button_div">
-					<button id="initial_button">Initial Code</button>
-					<button id="start_new_button">Start Game</button>
+					<button class="button" id="initial_button">Initial Code</button>
+					<button class="button" id="start_new_button">Start Game</button>
 				</div>		
 
 				<div id="projects">	
@@ -34,7 +35,7 @@
 			</div>
 
 			<div id="rightbar">
-				<iframe id="iframe" sandbox="allow-scripts" src="coderelay/frame.html"></iframe>
+				<iframe id="iframe" src="coderelay/frame.html"></iframe>
 			</div>
 
 		</div>

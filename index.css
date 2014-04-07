@@ -54,22 +54,23 @@ li {
 	float: left;
 }
 #projectList {
-	margin-left: 2em;
+	/*margin-left: 2em;*/
 }
 
 #initial_button {
 	margin: auto;
 	width: 10em;
+	font-size: 18px;
 }
 
 #start_new_button {
 	margin: auto;
 	width: 10em;
+	font-size: 18px;
 }
 
 #button_div {
 	/*width: 25%;*/
-	font-size: 16px;
 	text-align: center;
 }
 

@@ -21,22 +21,46 @@ function drawTriangle(x0, y0, x1, y1, x2, y2) {
 */
 
 "use strict";
-var count = 1;
 var basename = "Code Relay Project "; 
 var baseid = "code_relay_project_";
+var projectList = [];
+var count=1;
 
 $(document).ready(function(){
 	$("#start_new_button").on("click", addNewProject);
 	$("#initial_button").on("click", initCode);
+	$("#start_new_button").attr('disable', true);
 	$(document).on("click","a.delete",deleteTRNode);
 });
 
-
 function addNewProject() {
+	if ($("#start_new_button").attr("disable") == "true") {
+		alert("Please choose an initial code snippet first.")
+		return;
+	}
 	var node = makeIdDOMNode("tr", baseid + count);
 	node.innerHTML = "<li><a>" + basename + count + "</a><a class=\"delete\" href=\"\">X</a></li>";
 	$("#projectList").append(node);
 	count ++;
+	$("#iframe").attr('src', 'blank.html');
+	$("#start_new_button").attr('disable', true);
+}
+
+function initCode() {
+	$("#iframe").contents().find('html').find('head').remove();
+	$("#iframe").contents().find('html').find('body').attr('bgcolor',"#E6E6FA");
+	$("#iframe").contents().find('html').find('body').html("<pre>" + rcodearray[Math.floor(Math.random() * rcodearray.length)] + "</pre>");
+	$("#start_new_button").attr('disable', false);
+}
+
+function alertme() {
+	alert("me");
+}
+
+function makeSimpleDOMNode(tagName, text) {
+	var simpleNode = document.createElement(tagName);
+	simpleNode.innerHTML = unescape(text);
+	return simpleNode;
 }
 
 function makeIdDOMNode(tagName, id) {
@@ -50,11 +74,3 @@ function deleteTRNode(event) {
 	$(this).parent().remove();
 }
 
-function initCode() {
-	alertme();
-	$("#iframe").contents().find("html").html("This is a iframe.");
-}
-
-function alertme() {
-	alert("me");
-}
