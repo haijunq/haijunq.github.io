@@ -81,3 +81,11 @@ a.delete {
     font-weight: bold;
     border: 2px;
 }
+
+a.changeFrame {
+    margin-left: 20px;
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    border: 2px;	
+}
