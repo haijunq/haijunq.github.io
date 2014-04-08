@@ -24,7 +24,7 @@ function drawTriangle(x0, y0, x1, y1, x2, y2) {
 var basename = "Code Relay Project "; 
 var baseid = "code_relay_project_";
 var projectList = [];
-var count = 4;
+var count = 6;
 
 $(document).ready(function(){
 	$("#start_new_button").on("click", addNewProject);
@@ -40,7 +40,7 @@ function addNewProject() {
 		return;
 	}
 	var node = makeIdDOMNode("li", baseid + count);
-	node.innerHTML = "<a>" + basename + count + "</a><a class=\"delete\" href=\"\">X</a>";
+	node.innerHTML = "<a href=\"\" class='changeFrame'>" + basename + count + "</a><a class=\"delete\" href=\"\">X</a>";
 	$("#projectList").append(node);
 	count ++;
 	$("#iframe").attr('src', 'blank.html');

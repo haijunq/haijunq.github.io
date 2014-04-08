@@ -13,3 +13,213 @@ $(document).ready(function() {
 	ctx = c.getContext("2d");
 	drawTriangle(50,400,1100,400,600,50);
 });
+=====
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+</head>
+<body>
+
+<h1>My First JavaScript</h1>
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+</body>
+</html>
+=====
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<div id="txt"></div>
+</body>
+</html>
+=====
+<script type="text/JavaScript" src="jsDraw2D.js"></script>
+
+//Create jsGraphics object
+var gr = new jsGraphics(document.getElementById("canvas"));
+
+//Create jsColor object
+var col = new jsColor("red");
+
+//Create jsPen object
+var pen = new jsPen(col,1);
+
+//Draw a Line between 2 points
+var pt1 = new jsPoint(20,30);
+var pt2 = new jsPoint(120,230);
+gr.drawLine(pen,pt1,pt2);
+
+//Draw filled circle with pt1 as center point and radius 30. 
+gr.fillCircle(col,pt1,30);
+
+//You can also code with inline object instantiation like below
+gr.drawLine(pen,new jsPoint(40,10),new jsPoint(70,150)); 
+
+</script>
+=====
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Hello World!</p>
+<div>
+<p>The DOM is very useful!</p>
+<p>This example demonstrates the <b>document.body</b> property.</p>
+</div>
+
+<script>
+alert(document.body.innerHTML);
+</script>
+
+</body>
+</html>
+=====
+function tableCreate(){
+var body=document.getElementsByTagName('body')[0];
+var tbl=document.createElement('table');
+tbl.style.width='100%';
+tbl.setAttribute('border','1');
+var tbdy=document.createElement('tbody');
+for(var i=0;i<3;i++){
+    var tr=document.createElement('tr');
+    for(var j=0;j<2;j++){
+        if(i==2 && j==1){
+                break
+                 } else {
+        var td=document.createElement('td');
+        td.appendChild(document.createTextNode('\u0020'))
+        i==1&&j==1?td.setAttribute('rowSpan','2'):null;
+        tr.appendChild(td)
+        }
+    }
+    tbdy.appendChild(tr);
+}
+tbl.appendChild(tbdy);
+body.appendChild(tbl)
+}
+=====
+<!-- START SOCIAL MEDIA WIDGET -->
+<ul id="socialbar">
+<li id="facebook">
+<a target="_blank" href="http://www.facebook.com/username">
+<IMG src="http://www.topproducerwebsite.com/images/site_defaults/generic/facebook.png">
+</a>
+</li>
+</ul>
+<style>#socialbar img {border:0px;}#socialbar li img {width:48px; height:48px;}#socialbar li a:hover {position:relative;top:2px;}#socialbar{padding:0px;list-style: none outside none; margin:0px; position: static;}#socialbar li {display:inline;padding-right:2px;}#socialbar{width:180px;text-align:center;}
+</style><!-- END SOCIAL MEDIA WIDGET -->
+=====
+<style type="text/css">       
+#Video1
+{
+ position:absolute;
+ top: 50px;
+ left:0px;        
+ width:1000px;       
+ border:2px solid blue;
+ display:block;
+ z-index:99;
+ }
+    
+#Video2
+{
+ position:absolute;
+ top:80px;
+ left:60px;
+ width:300px;
+ border:2px solid red;        
+ z-index:100;
+}
+
+</style>
+</head>
+<body>        
+   <video id="Video1" controls loop autoplay >
+       <source src="http://ie.microsoft.com/testdrive/ieblog/2011/nov/pp4_blog_demo.mp4" type="video/mp4" />           
+   </video>
+   
+   <video id="Video2" muted autoplay controls >
+       <source src="http://ie.microsoft.com/testdrive/Videos/BehindIE9AllAroundFast/video.mp4" type="video/mp4" />
+       HTML5 Video not supported
+</video>   
+</body>
+</html>
+=====
+<script type="text/javascript">
+
+    function vidplay() {
+       var video = document.getElementById("Video1");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }
+    }
+
+    function restart() {
+        var video = document.getElementById("Video1");
+        video.currentTime = 0;
+    }
+
+    function skip(value) {
+        var video = document.getElementById("Video1");
+        video.currentTime += value;
+    }      
+</script>
+
+</head>
+<body>        
+
+<video id="Video1" >
+//  Replace these with your own video files. 
+     <source src="demo.mp4" type="video/mp4" />
+     <source src="demo.ogv" type="video/ogg" />
+     HTML5 Video is required for this example. 
+     <a href="demo.mp4">Download the video</a> file. 
+</video>
+
+<div id="buttonbar">
+    <button id="restart" onclick="restart();">[]</button> 
+    <button id="rew" onclick="skip(-10)">&lt;&lt;</button>
+    <button id="play" onclick="vidplay()">&gt;</button>
+    <button id="fastFwd" onclick="skip(10)">&gt;&gt;</button>
+</div>
+</body>
+</html>
